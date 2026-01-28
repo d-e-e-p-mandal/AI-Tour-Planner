@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../ui/button.jsx";
+import { Button } from "../ui/Button";
 import {
   Popover,
   PopoverContent,
