@@ -14,7 +14,7 @@ import ViewTrip from "./view-trip/ViewTrip.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 import Header from "./components/custom/Header.jsx";
-import { Toaster } from "./components/ui/sonner.jsx";
+import { Toaster } from "./components/ui/Sonner.jsx";
 import "./index.css";
 
 /* ---------- Layout ---------- */
