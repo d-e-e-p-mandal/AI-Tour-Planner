@@ -9,7 +9,7 @@ import {
   AI_PROMPT,
   SelectBudgetOptions,
   SelectTravelList,
-} from "../constants/Options.jsx";
+} from "../constants/options";
 
 import { toast } from "sonner";
 import { generateTrip } from "../service/AIModel.jsx";
@@ -24,7 +24,7 @@ import {
 
 import { useGoogleLogin } from "@react-oauth/google";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../service/FirebaseConfig.js";
+import { db } from "../service/firebaseConfig.js";
 import { useNavigate } from "react-router-dom";
 
 const normalizeTripData = (raw) => ({
