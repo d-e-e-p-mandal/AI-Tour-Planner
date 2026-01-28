@@ -77,12 +77,6 @@
     --input: 214 32% 91%;
     --ring: 215 20% 65%;
   }
-
-  /* ❌ REMOVE this — Tailwind v4 does not support it */
-  /* * {
-    @apply border-border;
-  } */
-
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
