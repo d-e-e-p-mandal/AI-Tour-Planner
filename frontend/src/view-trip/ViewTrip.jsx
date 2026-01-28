@@ -3,7 +3,7 @@ import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-import { db } from "../service/firebaseConfig.js";
+import { db } from "@/service/firebaseConfig";
 import InfoSection from "./components/InfoSection.jsx";
 import Hotels from "./components/Hotels.jsx";
 import Itinerary from "./components/Itinerary.jsx";
