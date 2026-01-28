@@ -1,17 +1,26 @@
 {
   "name": "ai-tour",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
 
-    "dev:backend": "npm run dev --prefix backend",
+    "dev:backend": "nodemon backend/server.js",
     "dev:frontend": "npm run dev --prefix frontend",
 
     "build": "npm install --prefix frontend && npm run build --prefix frontend",
 
     "start": "node backend/server.js"
   },
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "@google/genai": "^1.38.0"
+  },
   "devDependencies": {
+    "nodemon": "^3.1.11",
     "concurrently": "^8.2.2"
   }
 }

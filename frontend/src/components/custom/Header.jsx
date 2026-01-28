@@ -50,7 +50,7 @@ const Header = () => {
       {/* Logo */}
       <Link to="/" className="flex items-center h-full">
         <img
-          src="/ai-trip-planner/logo.png"
+          src="logo.png"
           alt="AI Trip Planner"
           className="h-20 w-auto object-contain"
         />

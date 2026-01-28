@@ -24,7 +24,7 @@ import {
 
 import { useGoogleLogin } from "@react-oauth/google";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../service/firebaseConfig.js";
+import { db } from "@/service/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 
 const normalizeTripData = (raw) => ({
