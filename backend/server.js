@@ -2,12 +2,20 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import path from "path";
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+/* ---------- PORT ---------- */
+const PORT = process.env.PORT || 3001;
+
+/* ---------- STATIC FRONTEND ---------- */
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
 /* ---------- API KEY CHECK ---------- */
 if (!process.env.GEMINI_API_KEY) {
@@ -19,7 +27,7 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
-/* ---------- Route ---------- */
+/* ---------- API Route ---------- */
 app.post("/generate-trip", async (req, res) => {
   try {
     const { prompt } = req.body;
@@ -42,7 +50,7 @@ app.post("/generate-trip", async (req, res) => {
       response?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!text) {
-      throw new Error("Empty Gemini response");
+      return res.status(500).json({ error: "Empty Gemini response" });
     }
 
     res.json({ text });
@@ -52,7 +60,14 @@ app.post("/generate-trip", async (req, res) => {
   }
 });
 
+/* ---------- SPA Fallback ---------- */
+app.use((req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "frontend", "dist", "index.html")
+  );
+});
+
 /* ---------- Server ---------- */
-app.listen(3001, () => {
-  console.log("✅ Server running at http://localhost:3001");
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
 });
