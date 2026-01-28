@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/Button.jsx";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../ui/popover.jsx";
+} from "../ui/Popover.jsx";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "../ui/dialog.jsx";
+} from "../ui/Dialog.jsx";
+
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
 
 const Header = () => {
