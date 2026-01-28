@@ -1,7 +1,7 @@
 
 # 🧭 AI-Based Tour Planner
 
-[LIVE LINK]()
+[LIVE LINK](https://ai-tour-planner.onrender.com)
 
 An intelligent travel planning web application that generates personalized trip itineraries, hotel recommendations, and places to visit using AI and real-world location data.
 
