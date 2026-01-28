@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
-import { Input } from "../components/ui/input.jsx";
-import { Button } from "../components/ui/button.jsx";
+import { Input } from "../components/ui/Input";
+import { Button } from "../components/ui/Button.jsx";
 
 import {
   AI_PROMPT,
   SelectBudgetOptions,
   SelectTravelList,
-} from "../constants/options.jsx";
+} from "../constants/Options.jsx";
 
 import { toast } from "sonner";
 import { generateTrip } from "../service/AIModel.jsx";
@@ -20,11 +20,11 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "../components/ui/dialog.jsx";
+} from "../components/ui/Dialog.jsx";
 
 import { useGoogleLogin } from "@react-oauth/google";
 import { doc, setDoc } from "firebase/firestore";
-import { db } from "../service/firebaseConfig.jsx";
+import { db } from "../service/FirebaseConfig.js";
 import { useNavigate } from "react-router-dom";
 
 const normalizeTripData = (raw) => ({
