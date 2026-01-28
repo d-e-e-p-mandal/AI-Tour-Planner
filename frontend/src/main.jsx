@@ -67,7 +67,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/ai-trip-planner",
+    basename: "/",
   }
 );
 
