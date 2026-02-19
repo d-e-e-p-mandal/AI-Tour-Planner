@@ -7,7 +7,18 @@ import path from "path";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://ai-tour-planner.onrender.com",
+    ],
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
+
+app.options("*", cors());
 app.use(express.json());
 
 /* ---------- PORT ---------- */
