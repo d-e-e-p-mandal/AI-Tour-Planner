@@ -10,11 +10,6 @@ const app = express();
 
 
 // cors
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://ai-tour-planner.onrender.com",
-];
-
 app.use(cors());
 app.options("*", cors());
 
