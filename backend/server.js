@@ -15,31 +15,7 @@ const allowedOrigins = [
   "https://ai-tour-planner.onrender.com",
 ];
 
-app.use(
-  cors({
-    origin: (origin, cb) => {
-      if (!origin) return cb(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        return cb(null, true);
-      }
-
-      return cb(null, true); // allow all safely
-    },
-
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "X-Requested-With",
-      "Accept",
-    ],
-    exposedHeaders: ["Set-Cookie"],
-    maxAge: 86400,
-  })
-);
-
+app.use(cors());
 app.options("*", cors());
 
 app.use(express.json());
