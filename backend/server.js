@@ -13,12 +13,10 @@ app.use(
       "http://localhost:5173",
       "https://ai-tour-planner.onrender.com",
     ],
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
 
-//app.options("*", cors());
 app.use(express.json());
 
 /* ---------- PORT ---------- */
